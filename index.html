@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Your Short Film - Flipkart Style</title>
+    <style>
+        /* General page styling */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #f1f3f6;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Flipkart style navbar */
+        .navbar {
+            background-color: #2874f0;
+            padding: 15px;
+        }
+
+        .navbar h1 {
+            color: white;
+            margin: 0;
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        /* Container for the form */
+        #trackingForm {
+            background-color: white;
+            width: 50%;
+            margin: 50px auto;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Input styling */
+        input[type="text"] {
+            padding: 12px;
+            width: 80%;
+            margin-bottom: 20px;
+            border: 1px solid #d1d1d1;
+            border-radius: 4px;
+        }
+
+        /* Button styling */
+        button {
+            padding: 12px 20px;
+            background-color: #fb641b;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #f96332;
+        }
+
+        /* Result styling */
+        #result {
+            margin-top: 20px;
+            font-size: 1.1em;
+        }
+
+        /* Flipkart footer style */
+        .footer {
+            background-color: #172337;
+            color: white;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        @media screen and (max-width: 480px) {
+            .navbar h1 {
+                font-size: 20px;
+            }
+
+            #trackingForm {
+                width: 90%;
+                padding: 15px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            input[type="text"] {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Flipkart-like Navbar -->
+    <div class="navbar">
+        <h1>FlipTrack</h1>
+    </div>
+
+    <!-- Tracking Form -->
+    <div id="trackingForm">
+        <h2>Track Your Short Film</h2>
+        <p>Enter your tracking ID below to see the status of your short film:</p>
+        <input type="text" id="trackingId" placeholder="Enter your Tracking ID">
+        <button onclick="checkTracking()">Track Now</button>
+        <div id="result"></div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 FlipTrack Inc. All rights reserved.</p>
+    </div>
+
+    <!-- JavaScript for tracking logic -->
+    <script>
+        function checkTracking() {
+            const fakeIds = ["FILM12345", "MOVIE67890", "SHORTFILM2468"]; // Fake IDs for demo
+            const enteredId = document.getElementById('trackingId').value.toUpperCase();
+            const resultDiv = document.getElementById('result');
+
+            if (fakeIds.includes(enteredId)) {
+                resultDiv.innerHTML = `<p style="color:green;">Tracking ID: ${enteredId} - Status: In Production 🎬</p>`;
+            } else {
+                resultDiv.innerHTML = `<p style="color:red;">Tracking ID not found. Please try again.</p>`;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
